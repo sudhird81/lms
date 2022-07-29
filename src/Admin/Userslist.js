@@ -10,7 +10,7 @@ const Userslist = () => {
   const [dataSource, setDataSource] = useState([]);
   const [totalPages, setTotalPages] = useState();
   const [current, setCurrent] = useState(1);
-  const [perPage, setPePage] = useState();
+  const [perPage, setPerPage] = useState();
   const { userlist } = useContext(titleContext);
   useEffect(() => {
     getEmployee(1);
@@ -27,7 +27,7 @@ const Userslist = () => {
       setDataSource(res.data.data.data);
       setTotalPages(res.data.data.total);
       // console.log(res.data.data.per_page)
-      setPePage(res.data.data.per_page);
+      setPerPage(res.data.data.per_page);
       setLoading(false);
     });
   };

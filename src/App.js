@@ -22,6 +22,7 @@ import Docs from "./Pages/Docs";
 import Listdocs from "./Admin/Listdocs";
 import Mydocs from "./Pages/Mydocs";
 import Holiday from "./Admin/Holiday";
+import Holidaylist from "./component/common/Holidaylist";
 
 export const titleContext = React.createContext();
 
@@ -144,6 +145,7 @@ function App() {
                       <Route path="/employees" element={<Userslist />} />
                       <Route path="/userdocs" element={<Listdocs />} />
                       <Route path="/holiday" element={<Holiday />} />
+                      <Route path="/holidaylist" element={<Holidaylist />} />
                       <Route path="/docs" element={<Mydocs />} />
                       <Route path="/logout" element={<Logout />} />
                     </Routes>

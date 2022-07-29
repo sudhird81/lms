@@ -6,7 +6,7 @@ const { Sider } = Layout;
 const Sidebar = () => {
   const isAdmin = sessionStorage.getItem("superUser");
 
-  console.log(isAdmin);
+//  console.log(isAdmin);
   const adminItem = [
     {
       label: <Link to="/dashboard">Dashboard</Link>,
@@ -24,6 +24,10 @@ const Sidebar = () => {
     {
       label: <Link to="/holiday">Holidays</Link>,
       key: "holidays",
+    },
+    {
+      label:<Link to="/holidaylist">Holidays List</Link>,
+      key:"adminholidaylist",
     },
     {
       label: "Employees",
@@ -75,6 +79,10 @@ const Sidebar = () => {
         },
       ],
     },
+    {
+      label:<Link to="/holidaylist">Holiday List</Link>,
+      key:"userholidaylist",
+    }
   ];
 
   function renderElement() {
@@ -109,10 +117,10 @@ const Sidebar = () => {
         breakpoint="lg"
         collapsedWidth="0"
         onBreakpoint={(broken) => {
-          console.log(broken);
+        //  console.log(broken);
         }}
         onCollapse={(collapsed, type) => {
-          console.log(collapsed, type);
+        //  console.log(collapsed, type);
         }}
       >
         {renderElement()}

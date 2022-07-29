@@ -5,7 +5,6 @@ import { useForm } from "antd/lib/form/Form";
 
 const { RangePicker } = DatePicker;
 
-
 const Holiday = () => {
   const { http } = AuthUser();
 
@@ -20,12 +19,13 @@ const Holiday = () => {
       .then((res) => {
         console.log(res);
         if (res.status === 200) {
-            notification.success({
-              description: "Holiday Announced Successfully",
-              placement: "topRight",
-              top: 50,
-            });
-          }
+          form.resetFields();
+          notification.success({
+            description: "Holiday Announced Successfully",
+            placement: "topRight",
+            top: 50,
+          });
+        }
       });
   };
   return (
@@ -52,7 +52,6 @@ const Holiday = () => {
             form={form}
             onFinish={(values) => submitHandle(values)}
             autoComplete="off"
-
           >
             <Form.Item
               disabled
